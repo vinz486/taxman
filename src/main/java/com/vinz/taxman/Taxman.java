@@ -1,10 +1,18 @@
-package com.example.demo;
+package com.vinz.taxman;
+
+import javax.inject.Inject;
 
 
-public class Taxman {
+public class Taxman
+{
+    @Inject
+    Taxman()
+    {
 
-	public static void main(String[] args) {
-		
-	}
+    }
 
+    void print()
+    {
+        //TODO
+    }
 }

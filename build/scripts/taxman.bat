@@ -79,7 +79,7 @@ set CMD_LINE_ARGS=%*
 :execute
 @rem Setup the command line
 
-set CLASSPATH=%APP_HOME%\lib\taxman-0.1.0.jar;%APP_HOME%\lib\commons-lang-2.6.jar;%APP_HOME%\lib\asciitable-0.3.2.jar;%APP_HOME%\lib\ascii-utf-themes-0.0.1.jar;%APP_HOME%\lib\char-translation-0.0.2.jar;%APP_HOME%\lib\skb-interfaces-0.0.1.jar;%APP_HOME%\lib\commons-lang3-3.4.jar;%APP_HOME%\lib\ST4-4.0.8.jar;%APP_HOME%\lib\antlr4-4.5.1.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar;%APP_HOME%\lib\antlr-runtime-3.5.2.jar
+set CLASSPATH=%APP_HOME%\lib\taxman-0.1.0.jar;%APP_HOME%\lib\commons-lang-2.6.jar;%APP_HOME%\lib\dagger-2.24.jar;%APP_HOME%\lib\asciitable-0.3.2.jar;%APP_HOME%\lib\javax.inject-1.jar;%APP_HOME%\lib\ascii-utf-themes-0.0.1.jar;%APP_HOME%\lib\char-translation-0.0.2.jar;%APP_HOME%\lib\skb-interfaces-0.0.1.jar;%APP_HOME%\lib\commons-lang3-3.4.jar;%APP_HOME%\lib\ST4-4.0.8.jar;%APP_HOME%\lib\antlr4-4.5.1.jar;%APP_HOME%\lib\slf4j-api-1.7.12.jar;%APP_HOME%\lib\antlr-runtime-3.5.2.jar
 
 @rem Execute taxman
 "%JAVA_EXE%" %DEFAULT_JVM_OPTS% %JAVA_OPTS% %TAXMAN_OPTS%  -classpath "%CLASSPATH%" Taxman %CMD_LINE_ARGS%

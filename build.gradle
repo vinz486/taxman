@@ -6,7 +6,7 @@ plugins {
 group = 'com.vinz.taxman'
 version = '0.1.0'
 
-mainClassName = "Taxman"
+mainClassName = "com.vinz.taxman.TaxmanApp"
 
 sourceCompatibility = '1.8'
 
@@ -15,6 +15,9 @@ repositories {
 }
 
 dependencies {
+
+	// Parse CSV files
+	implementation 'com.opencsv:opencsv:5.0'
 
 	// Usefuls 
 	implementation 'commons-lang:commons-lang:2.6'

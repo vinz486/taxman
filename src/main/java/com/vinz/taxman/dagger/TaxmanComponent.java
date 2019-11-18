@@ -5,7 +5,7 @@ import com.vinz.taxman.Taxman;
 import dagger.Component;
 
 
-@Component
+@Component(modules = LoggerModule.class)
 public interface TaxmanComponent
 {
     Taxman getTaxman();

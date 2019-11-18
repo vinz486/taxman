@@ -14,7 +14,7 @@ Tax calculator for sales receipts.
 ./gradlew installDist
 ```
 
-#### Finally execute application:
+#### Finally, execute application:
 ```
-build/install/taxomatic/bin/taxomatic
+build/install/taxman/bin/taxman
 ```

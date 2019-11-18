@@ -1,0 +1,29 @@
+plugins {
+	id 'application'
+}
+
+group = 'com.vinz.taxman'
+version = '0.1.0'
+
+mainClassName = "Taxman"
+
+sourceCompatibility = '1.8'
+
+repositories {
+	mavenCentral()
+}
+
+dependencies {
+
+	// Usefuls 
+	implementation 'commons-lang:commons-lang:2.6'
+
+	// Print pretty old ASCII tables	
+	implementation 'de.vandermeer:asciitable:0.3.2'
+
+
+	// Test deps
+	testImplementation 'junit:junit:4.12'
+	testImplementation 'org.assertj:assertj-core:3.14.0'
+	testImplementation 'org.mockito:mockito-core:3.1.0'
+}

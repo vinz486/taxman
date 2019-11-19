@@ -6,7 +6,7 @@ Tax calculator for sales receipts.
 
 #### Run all unit tests:
 ```
-./gradlew check
+./gradlew clean test
 ```
 
 #### Build application and generate start scripts:

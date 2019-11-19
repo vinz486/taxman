@@ -1,11 +1,11 @@
 package com.vinz.taxman.input;
 
-import java.io.FileNotFoundException;
-import java.io.InputStreamReader;
+import com.opencsv.bean.CsvToBean;
+import com.opencsv.bean.CsvToBeanBuilder;
+import com.vinz.taxman.model.Product;
 
 import javax.inject.Inject;
-
-import com.opencsv.CSVReader;
+import java.io.InputStreamReader;
 
 
 public class ReaderFactory
@@ -17,9 +17,13 @@ public class ReaderFactory
 
     }
 
-    public CSVReader getReader(String inputId) throws FileNotFoundException
+    public CsvToBean<Product> getReader(String inputId)
     {
 
-        return new CSVReader(new InputStreamReader(this.getClass().getResourceAsStream("/" + inputId)));
+        CsvToBeanBuilder<Product> csvToBeanBuilder = new CsvToBeanBuilder<>(new InputStreamReader(this.getClass().getResourceAsStream("/" + inputId)));
+
+        csvToBeanBuilder.withType(Product.class).withIgnoreLeadingWhiteSpace(true);
+
+        return csvToBeanBuilder.build();
     }
 }

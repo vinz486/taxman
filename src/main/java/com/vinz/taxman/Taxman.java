@@ -1,9 +1,9 @@
 package com.vinz.taxman;
 
-import javax.inject.Inject;
-
 import com.vinz.taxman.input.CartLoader;
 import com.vinz.taxman.model.Cart;
+
+import javax.inject.Inject;
 
 
 public class Taxman
@@ -22,6 +22,7 @@ public class Taxman
 
     void print()
     {
+
         Cart cart = cartLoader.load(ID_INPUT1);
     }
 }

@@ -1,5 +1,6 @@
 package com.vinz.taxman.input;
 
+import com.vinz.taxman.exception.InvalidCartException;
 import com.vinz.taxman.model.Cart;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -9,6 +10,7 @@ import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
 import static org.assertj.core.api.Assertions.assertThat;
+import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
@@ -23,7 +25,7 @@ public class CartLoaderTests
     ReaderFactory spiedReaderFactory;
 
     @Test
-    void testLoader()
+    void testLoaderOk() throws InvalidCartException
     {
 
         /* Prepare */
@@ -47,5 +49,19 @@ public class CartLoaderTests
         assertThat(loaded.getProducts().get(0).getId()).isEqualTo("P01");
         assertThat(loaded.getProducts().get(1).getId()).isEqualTo("P02");
         assertThat(loaded.getProducts().get(2).getId()).isEqualTo("P03");
+    }
+
+    @Test()
+    void testLoaderInvalid()
+    {
+
+        /* Prepare */
+        String cartId = "testInvalid1.csv";
+
+        /* Execute */
+        assertThatThrownBy(() -> testedCartLoader.load(cartId))
+                /* Verify */
+                .isInstanceOf(InvalidCartException.class)
+                .hasMessageContaining(cartId);
     }
 }

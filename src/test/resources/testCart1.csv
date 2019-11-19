@@ -1,4 +1,0 @@
-id,quantity,description,price,imported
-P01,2,Test1,11.22,false
-P02,2,Test2,22.33,true
-P03,2,Test3,33.44,false

@@ -14,6 +14,11 @@ public class InvalidCartException extends Exception
     @Override
     public String getMessage()
     {
+        if (getCause() == null) {
+
+            return super.getMessage();
+        }
+
         return super.getMessage() + " > " + getCause().getMessage();
     }
 }

@@ -7,9 +7,9 @@ import java.util.List;
 
 @Data
 @Builder
-public class Cart
+public class Receipt
 {
-    private String id;
+    private String receiptNumber;
 
     private List<Item> items;
 }

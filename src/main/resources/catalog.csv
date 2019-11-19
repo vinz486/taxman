@@ -1,0 +1,10 @@
+sku,category,description,price,imported
+BOOK01,book,Book,12.49,false
+MUCD01,music,Music CD,14.99,false
+CHOC01,food,Chocolate Bar,0.85,false
+CHOC02,food,Box of Chocolates,10.00,true
+PERF01,beauty,Bottle of Perfume,47.50,true
+PERF02,beauty,Bottle of Perfume,27.99,true
+PERF03,beauty,Bottle of Perfume,18.99,false
+PILL01,medical,Packet of Headache Pills,9.75,false
+CHOC03,food,Box of Chocolates,11.25,true

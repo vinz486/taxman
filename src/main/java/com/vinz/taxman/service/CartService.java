@@ -1,30 +1,31 @@
-package com.vinz.taxman.input;
+package com.vinz.taxman.service;
 
 import com.opencsv.bean.CsvToBean;
 import com.vinz.taxman.exception.InvalidCartException;
+import com.vinz.taxman.factory.ReaderFactory;
 import com.vinz.taxman.model.Cart;
-import com.vinz.taxman.model.Product;
+import com.vinz.taxman.model.Item;
 
 import javax.inject.Inject;
 import java.util.List;
 
 
-public class CartLoader
+public class CartService extends AbstractService
 {
     @Inject
     ReaderFactory readerFactory;
 
     @Inject
-    public CartLoader()
+    public CartService()
     {
-
     }
 
     public Cart load(String cartId) throws InvalidCartException
     {
-        CsvToBean<Product> reader = readerFactory.getReader(cartId);
 
         try {
+
+            CsvToBean<Item> reader = readerFactory.getReader(cartId, Item.class);
 
             return buildCart(reader.parse(), cartId);
 
@@ -34,8 +35,8 @@ public class CartLoader
         }
     }
 
-    private Cart buildCart(List<Product> parsed, String cartId)
+    private static Cart buildCart(List<Item> parsed, String cartId)
     {
-        return Cart.builder().id(cartId).products(parsed).build();
+        return Cart.builder().id(cartId).items(parsed).build();
     }
 }

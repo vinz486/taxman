@@ -1,5 +1,7 @@
 package com.vinz.taxman.model;
 
+import java.math.BigDecimal;
+
 import com.opencsv.bean.CsvBindByName;
 import lombok.EqualsAndHashCode;
 import lombok.Getter;
@@ -12,7 +14,8 @@ public class Item
 {
     private Product product;
 
-    private double taxes = 0;
+    private BigDecimal taxes;
+    private BigDecimal total;
 
     @CsvBindByName(required = true)
     private String sku;

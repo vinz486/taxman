@@ -9,12 +9,16 @@ import com.vinz.taxman.service.CheckoutService;
 import com.vinz.taxman.service.PrinterService;
 
 import javax.inject.Inject;
+
 import java.util.logging.Logger;
 
 
 public class Taxman
 {
+
     private static final String ID_INPUT1 = "input1";
+    private static final String ID_INPUT2 = "input2";
+    private static final String ID_INPUT3 = "input3";
 
     @Inject
     Logger logger;
@@ -41,12 +45,21 @@ public class Taxman
 
         catalogService.load();
 
+        Cart cart;
+
         try {
 
-            Cart cart = cartService.load(ID_INPUT1);
-
+            cart = cartService.load(ID_INPUT1);
             catalogService.resolve(cart);
+            emitReceipt(cart);
 
+
+            cart = cartService.load(ID_INPUT2);
+            catalogService.resolve(cart);
+            emitReceipt(cart);
+
+            cart = cartService.load(ID_INPUT3);
+            catalogService.resolve(cart);
             emitReceipt(cart);
 
         } catch (InvalidCartException e) {
@@ -59,6 +72,6 @@ public class Taxman
     {
         Receipt receipt = checkoutService.process(cart);
 
-        printerService.print(receipt);
+        printerService.render(receipt);
     }
 }

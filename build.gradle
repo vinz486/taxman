@@ -1,6 +1,6 @@
 plugins {
-	id 'application'
-	id 'idea'
+    id 'application'
+    id 'idea'
 }
 
 group = 'com.vinz.taxman'
@@ -11,28 +11,27 @@ mainClassName = "com.vinz.taxman.TaxmanApp"
 sourceCompatibility = '1.8'
 
 repositories {
-	mavenCentral()
+    mavenCentral()
 }
 
 dependencies {
 
-	// Parse CSV files
-	implementation 'com.opencsv:opencsv:5.0'
+    // Parse CSV files
+    implementation 'com.opencsv:opencsv:5.0'
 
-	// Usefuls 
-	implementation 'commons-lang:commons-lang:2.6'
+    // Usefuls
     implementation 'org.projectlombok:lombok:1.18.10'
     annotationProcessor 'org.projectlombok:lombok:1.18.10'
 
-	// Dependency Injection
-	implementation 'com.google.dagger:dagger:2.24'
-	annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
+    // Dependency Injection
+    implementation 'com.google.dagger:dagger:2.24'
+    annotationProcessor 'com.google.dagger:dagger-compiler:2.24'
 
-	// Print pretty old ASCII tables	
-	implementation 'de.vandermeer:asciitable:0.3.2'
+    // Print pretty old ASCII tables
+    implementation 'de.vandermeer:asciitable:0.2.5'
 
 
-	// Test deps
+    // Test deps
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-params:5.5.2'
     testImplementation 'org.junit.jupiter:junit-jupiter-engine:5.5.2'
@@ -46,6 +45,4 @@ dependencies {
 test {
     useJUnitPlatform()
 }
-
-
 

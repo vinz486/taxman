@@ -1,9 +1,10 @@
-package com.vinz.taxman.factory;
+package com.vinz.taxman.service;
 
 import com.vinz.taxman.exception.InvalidCartException;
+import com.vinz.taxman.factory.ReaderFactory;
 import com.vinz.taxman.model.Cart;
 import com.vinz.taxman.model.Item;
-import com.vinz.taxman.service.CartService;
+
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.api.extension.ExtendWith;
@@ -11,14 +12,12 @@ import org.mockito.InjectMocks;
 import org.mockito.Spy;
 import org.mockito.junit.jupiter.MockitoExtension;
 
-import java.util.logging.Logger;
-
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.assertj.core.api.Assertions.assertThatThrownBy;
 import static org.mockito.Mockito.verify;
 
 @ExtendWith(MockitoExtension.class)
-@DisplayName("Testing loading from CSV")
+@DisplayName("Testing loading Carts from CSV")
 public class CartServiceTests
 {
 
@@ -31,7 +30,6 @@ public class CartServiceTests
     @Test
     void testLoaderOk() throws InvalidCartException
     {
-
         /* Prepare */
         String cartId = "testcart1";
 
@@ -58,7 +56,6 @@ public class CartServiceTests
     @Test()
     void testLoaderInvalid()
     {
-
         /* Prepare */
         String cartId = "testinvalid1";
 

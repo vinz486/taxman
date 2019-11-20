@@ -2,7 +2,7 @@ package com.vinz.taxman.service;
 
 import com.vinz.taxman.model.Item;
 import com.vinz.taxman.model.Receipt;
-
+import de.vandermeer.asciitable.v2.RenderedTable;
 import de.vandermeer.asciitable.v2.V2_AsciiTable;
 import de.vandermeer.asciitable.v2.render.V2_AsciiTableRenderer;
 import de.vandermeer.asciitable.v2.render.WidthFixedColumns;
@@ -10,7 +10,6 @@ import de.vandermeer.asciitable.v2.row.ContentRow;
 import de.vandermeer.asciitable.v2.themes.V2_E_TableThemes;
 
 import javax.inject.Inject;
-
 import java.math.BigDecimal;
 import java.util.List;
 
@@ -21,7 +20,7 @@ public class PrinterService extends AbstractService
     {
     }
 
-    public void render(Receipt receipt)
+    public String render(Receipt receipt)
     {
         V2_AsciiTable table = new V2_AsciiTable();
 
@@ -38,7 +37,10 @@ public class PrinterService extends AbstractService
         renderTotal(table, receipt.getGrandTotal());
 
         table.addRule();
-        print(table);
+
+        RenderedTable generated = generate(table);
+
+        return generated.toString();
     }
 
     private static void renderTotal(V2_AsciiTable table, BigDecimal grandTotal)
@@ -80,7 +82,7 @@ public class PrinterService extends AbstractService
         }
     }
 
-    private static void print(V2_AsciiTable table)
+    private static RenderedTable generate(V2_AsciiTable table)
     {
         V2_AsciiTableRenderer renderer = new V2_AsciiTableRenderer();
         renderer.setTheme(V2_E_TableThemes.UTF_LIGHT_DOUBLE.get());
@@ -90,6 +92,6 @@ public class PrinterService extends AbstractService
 
         renderer.setWidth(width);
 
-        System.out.println(renderer.render(table));
+        return renderer.render(table);
     }
 }

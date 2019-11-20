@@ -3,8 +3,8 @@ package com.vinz.taxman.service;
 import com.vinz.taxman.model.Item;
 
 import javax.inject.Inject;
-
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 import static com.vinz.taxman.service.SalesTaxService.Taxes.*;
 
@@ -76,8 +76,8 @@ public class SalesTaxService extends AbstractService
 
     public BigDecimal taxRound(BigDecimal input)
     {
-        BigDecimal numberOfParts = input.divide(TAX_ROUND_QUANTUM, BigDecimal.ROUND_UP);
+        BigDecimal numberOfParts = input.divide(TAX_ROUND_QUANTUM, RoundingMode.UP);
 
-        return numberOfParts.setScale(0, BigDecimal.ROUND_UP).multiply(TAX_ROUND_QUANTUM);
+        return numberOfParts.setScale(0, RoundingMode.UP).multiply(TAX_ROUND_QUANTUM);
     }
 }

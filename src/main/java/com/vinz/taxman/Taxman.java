@@ -9,7 +9,6 @@ import com.vinz.taxman.service.CheckoutService;
 import com.vinz.taxman.service.PrinterService;
 
 import javax.inject.Inject;
-
 import java.util.logging.Logger;
 
 
@@ -72,6 +71,6 @@ public class Taxman
     {
         Receipt receipt = checkoutService.process(cart);
 
-        printerService.render(receipt);
+        System.out.println(printerService.render(receipt));
     }
 }

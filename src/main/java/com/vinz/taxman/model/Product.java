@@ -1,15 +1,16 @@
 package com.vinz.taxman.model;
 
-import java.math.BigDecimal;
-
 import com.opencsv.bean.CsvBindByName;
 import com.opencsv.bean.CsvCustomBindByName;
 import com.vinz.taxman.service.SalesTaxService.Category;
 import com.vinz.taxman.util.ProductBeanFieldConverter;
-
 import lombok.Getter;
+import lombok.Setter;
+
+import java.math.BigDecimal;
 
 @Getter
+@Setter
 public class Product
 {
     @CsvBindByName(required = true)

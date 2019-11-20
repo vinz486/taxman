@@ -67,13 +67,13 @@ You should get an output like this:
 
 #### Components and Libraries
 
- * CSV input parsing is got form [OpenCSV] (http://opencsv.sourceforge.net/)
- * Getter/Setter Builder autogeneration is form [Project Lombok] (https://projectlombok.org/)
- * Dependency Injection is provided by [Dagger2] (https://dagger.dev/)
- * ASCII Table rendering is produced by (ASCII Table) (https://github.com/vdmeer/asciitable)
+ * CSV input parsing is got form [OpenCSV](http://opencsv.sourceforge.net/)
+ * Getter/Setter Builder autogeneration is form [Project Lombok](https://projectlombok.org/)
+ * Dependency Injection is provided by [Dagger2](https://dagger.dev/)
+ * ASCII Table rendering is produced by [ASCII Table](https://github.com/vdmeer/asciitable)
  
 #### Improvements
 There are a lot of discussions about the rigth way to represent money and prices in the Java world. BigDecimal can be a solution but you must deal with some Exeptions thown when loosing precision (eg. 10 / 3 divisions).
 
-There is a java library called [JavaMoney] (https://javamoney.github.io/) that worth some exploration for sure.
+There is a java library called [JavaMoney](https://javamoney.github.io/) that worth some exploration for sure.
 
